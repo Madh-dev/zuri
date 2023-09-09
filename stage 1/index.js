@@ -10,9 +10,9 @@ app.get('/api', (req,res)=>{
 
     // Get current day and UTC time
     const currentDate = new Date();
-    console.log(currentDate)
     const currentDay = currentDate.toLocaleDateString('en-US',{weekday: 'long'});
-    const utcTime = currentDate.toISOString();
+    const utcTime = currentDate.toISOString().slice(0, -5) + 'Z';
+    
 
     //Construct the JSON response 
     const response = {
@@ -20,10 +20,8 @@ app.get('/api', (req,res)=>{
         current_day: currentDay,
         utc_time: utcTime,
         track,
-        // github_file_url:'',
-        // github_repo_url:'',
-        github_file_url: 'https://github.com/username/repo/blob/main/file_name.ext', // Replace with your file URL
-        github_repo_url: 'https://github.com/Madh-dev/zuri.git', // Replace with your repository URL
+        github_file_url: 'https://github.com/Madh-dev/zuri/blob/master/stage%201/index.js', // Replace with your file URL
+        github_repo_url: 'https://github.com/Madh-dev/zuri/tree/master/stage%201', // Replace with your repository URL
     
         status_code:200,
     };
