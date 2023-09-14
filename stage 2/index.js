@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Person = require('./models/person');
 
-
-mongoose.connect('mongodb+srv://HNG:HNG@cluster0.ovjfnib.mongodb.net/?retryWrites=true&w=majority',{
+require('dotenv').config();
+mongoose.connect('process.env.ATLAS_URL',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
