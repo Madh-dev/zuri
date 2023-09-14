@@ -15,6 +15,7 @@ db.once('open',()=>{
     console.log('Connected to MongoDB');
 })
 
+// "mongoose": "^7.5.1"
 // Body parser middleware
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
