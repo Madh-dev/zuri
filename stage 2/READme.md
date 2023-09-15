@@ -5,8 +5,8 @@
 ### run npm i after cloning
 
 ### The endpoints are 
-#### CREATE : https://stage2-wqfp.onrender.com/api/person
-#### READ,UPDATE,DELETE : https://stage2-wqfp.onrender.com/api/persons/:personID
+#### CREATE :https://stage2-anwt.onrender.com/api/person
+#### READ,UPDATE,DELETE : https://stage2-anwt.onrender.com/api/persons/:personID
 
 ##### Database SChema
  ##### the name must contain string only the others will be rejected
