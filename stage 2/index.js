@@ -41,7 +41,7 @@ app.get('/api/:user_id', async(req,res)=>{
     try {
         const person = await Person.findById(id);
         if(person){
-            res.status(200).json(person);
+            res.status(200).json(person.name);
 
         }else{
             res.status(400).json({error: 'Person not found'})
