@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 4000;
-app.post('/api/person',async(req,res)=>{
+app.post('/api',async(req,res)=>{
     try{
         //check if a user with the same name already exists
         const existingUser = await Person.findOne({name: req.body.name});
@@ -36,7 +36,7 @@ app.post('/api/person',async(req,res)=>{
     }
 });
 
-app.get('/api/persons/:user_id', async(req,res)=>{
+app.get('/api/:user_id', async(req,res)=>{
     const id = req.params.user_id;
     try {
         const person = await Person.findById(id);
@@ -51,7 +51,7 @@ app.get('/api/persons/:user_id', async(req,res)=>{
     }
 });
 
-app.put('/api/persons/:user_id',async(req,res)=>{
+app.put('/api/:user_id',async(req,res)=>{
     const id = req.params.user_id;
     try {
         const person = await Person.findByIdAndUpdate(id,req.body,{
@@ -67,7 +67,7 @@ app.put('/api/persons/:user_id',async(req,res)=>{
     }
 });
 
-app.delete('/api/persons/:user_id',async(req,res)=>{ 
+app.delete('/api/:user_id',async(req,res)=>{ 
     const id = req.params.user_id;
     try {
         const result = await Person.findByIdAndDelete(id);
